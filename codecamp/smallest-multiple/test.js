@@ -1,27 +1,18 @@
-const assert = require('assert');
-const multiple = require('./small-multiple.js');
+const assert = require('../../assert-wrapper.js');
+const smallestCommon = require('./small-multiple.js');
 
 test1();
 test2();
 test3();
 
 function test1() {
-    console.log('test [5,1]');
-    var result = multiple.smallestCommons([5,1]);
-    assert.equal(result, 60, 'expected 60 but got ' + result)
-    console.log('passed');
+    assert.equal(smallestCommon([5,1]), 60, 1)
 }
 
 function test2() {
-    console.log('test [1, 13]');
-    var result = multiple.smallestCommons([1,13]);
-    assert.equal(result, 360360, 'expected 360360 but got ' + result);
-    console.log('passed');
+    assert.equal(smallestCommon([1,13]), 360360, 2);
 }
 
 function test3() {
-    console.log('test [23, 18]');
-    var result = multiple.smallestCommons([23,18]);
-    assert.equal(result, 6056820, 'expected 6056820 but got ' + result);
-    console.log('passed');
+    assert.equal(smallestCommon([23,18]), 6056820, 3);
 }

@@ -93,5 +93,4 @@ function FactorMap(primes) {
     return factors;
 }
 
-this.smallestCommons = smallestCommons;
-module.exports = this;
+module.exports = smallestCommons;
