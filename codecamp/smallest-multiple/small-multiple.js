@@ -6,39 +6,37 @@
 function smallestCommons(arr) {
     var i;
     var currentFactors;
-    var larger;
-    var smaller;
-    var primesInRange;
-    var factorMap;
-    var keys;
-    var key;
+    var upperBound;
+    var lowerBound;
+    var relevantPrimes;
+    var commonFactors;
     var total = 1;
 
     arr = arr.sort();
-    larger = arr[1];
-    smaller = arr[0];
+    upperBound = arr[1];
+    lowerBound = arr[0];
 
-    primesInRange = getPrimesBelow(larger);
-    factorMap = new FactorMap(primesInRange);
+    relevantPrimes = getPrimesUpTo(upperBound);
+    commonFactors = new FactorMap(relevantPrimes);
 
-    for (i = smaller; i <= larger; i++) {
-        currentFactors = getFactorsOf(i, primesInRange);
+    for (i = lowerBound; i <= upperBound; i++) {
+        currentFactors = getPrimeFactors(i, relevantPrimes);
 
-        for (key in currentFactors) {
-            if (currentFactors[key] > factorMap[key]) {
-                factorMap[key] = currentFactors[key];
+        for (factor in currentFactors) {
+            if (currentFactors[factor] > commonFactors[factor]) {
+                commonFactors[factor] = currentFactors[factor];
             }
         }
     }
 
-    for (var prop in factorMap) {
-        total *= Math.pow(prop,factorMap[prop]);
+    for (var factor in commonFactors) {
+        total *= Math.pow(factor, commonFactors[factor]);
     }
 
     return total;
 }
 
-function getPrimesBelow(val) {
+function getPrimesUpTo(val) {
     var primes = [2];
     var candidate = 3;
     var i;
@@ -64,10 +62,10 @@ function getPrimesBelow(val) {
     return primes;
 }
 
-function getFactorsOf(val, primes) {
+function getPrimeFactors(val, primes) {
     var prime;
-    var factors = new FactorMap(primes);
     var i = 0;
+    var factors = new FactorMap(primes);
 
     while (val > 1) {
         prime = primes[i];
