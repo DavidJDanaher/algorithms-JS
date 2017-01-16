@@ -8,23 +8,23 @@ Example:
 [[1,3],[2,4]] =>
 
 |1 3|
-|2 4|   
+|2 4| =>  
 
-=> 1 2 3 4
+1 2 3 4
 ```
 
 Example:
 
+```
 [[1,3,6][2,5,8][4,7,9]] =>
 
-```
-|1 3 6|
-|2 5 8|
-|4 7 9|
-```
 
-=> '1 2 3 4 5 6 7 8 9'
+|1 3 6|
+|2 5 8| =>
+|4 7 9|
+
+
+=> 1 2 3 4 5 6 7 8 9
+```
 
 The arrays are not necessarily symmetric, i.e. m x n are possible, as well as n x n.
-
-
