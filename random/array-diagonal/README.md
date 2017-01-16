@@ -4,12 +4,14 @@ in diagonal order, bottom-left to top-right, starting from {0,0}.
 
 Example:
 
+```
 [[1,3],[2,4]] =>
 
-<p>|1 3|</p>
-<p>|2 4|</p>   
+|1 3|
+|2 4|   
 
-=> '1 2 3 4'
+=> 1 2 3 4
+```
 
 Example:
 
