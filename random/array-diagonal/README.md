@@ -24,7 +24,7 @@ Example:
 |4 7 9|
 
 
-=> 1 2 3 4 5 6 7 8 9
+1 2 3 4 5 6 7 8 9
 ```
 
 The arrays are not necessarily symmetric, i.e. m x n are possible, as well as n x n.
