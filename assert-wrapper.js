@@ -6,17 +6,17 @@ var expectationString = 'Expected';
 this.equal = equal;
 this.deepEqual = deepEqual;
 
-function equal(expected, actual) {
-    assert.equal(expected, actual, getFailureMsg(expected, actual));
+function equal(actual, expected) {
+    assert.equal(actual, expected, getFailureMsg(actual, expected));
     printSuccess(arguments[2]);
 }
 
-function deepEqual(expected, actual) {
-    assert.deepEqual(expected, actual, getFailureMsg(expected, actual));
+function deepEqual(actual, expected) {
+    assert.deepEqual(actual, expected, getFailureMsg(actual, expected));
     printSuccess(arguments[2]);
 }
 
-function getFailureMsg(expected, actual) {
+function getFailureMsg(actual, expected) {
     return 'Expected ' + expected + ' but found ' + actual;
 }
 
